@@ -1,0 +1,11 @@
+node_modules/
+.netlify/
+npm-debug.log*
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+.env.*

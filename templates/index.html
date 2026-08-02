@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Designer - Premium Interior Design Studio</title>
+    <meta name="description" content="Premium interior design services for homes, offices, kitchens, bedrooms, and commercial spaces.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="animated-bg" aria-hidden="true"></div>
+
+    <header>
+        <nav class="navbar" id="navbar">
+            <a class="nav-logo" href="#home" aria-label="Home Designer home">
+                <span class="logo-mark"><i class="fa-solid fa-cube"></i></span>
+                <span class="logo-text">Home Designer</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+            <div class="nav-links" id="navLinks">
+                <div class="sidebar-header">
+                    <div class="sidebar-brand">
+                        <span class="logo-mark"><i class="fa-solid fa-cube"></i></span>
+                        <div>
+                            <span class="logo-text">Home Designer</span>
+                            <small>Interior Studio</small>
+                        </div>
+                    </div>
+                    <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <ul class="nav-links-list">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="floating-element" aria-hidden="true"></div>
+            <div class="floating-element" aria-hidden="true"></div>
+            <div class="floating-element" aria-hidden="true"></div>
+            <div class="hero-content">
+                <h1>Transform Your Space Into Something Extraordinary</h1>
+                <p>We create elegant, functional, and timeless interiors for homes and commercial spaces.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">Explore Projects</a>
+                    <a href="#contact" class="btn btn-gold">Get Free Consultation</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-preview" id="about">
+            <div class="split-content animate-on-scroll">
+                <div class="media-block animate-slide-left">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Premium living room interior" loading="lazy">
+                </div>
+                <div class="copy-block animate-slide-right">
+                    <h2>Designing Beautiful Spaces Since 2015</h2>
+                    <p>We are a passionate team of interior designers dedicated to transforming spaces into refined, practical, and deeply personal environments. From first concept to final handover, every detail is planned with creativity and precision.</p>
+                    <div class="about-stats animate-stagger">
+                        <div class="stat-item">
+                            <span class="number">10+</span>
+                            <span class="label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">50+</span>
+                            <span class="label">Professional Designers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">100%</span>
+                            <span class="label">Customized Solutions</span>
+                        </div>
+                    </div>
+                    <a href="#services" class="btn btn-primary">About Us <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <h2 class="section-title animate-on-scroll">Our Services</h2>
+            <p class="section-subtitle animate-on-scroll">We offer a wide range of interior design services tailored to your needs.</p>
+            <div class="services-grid animate-stagger">
+                {% for service in services %}
+                    <article class="service-card">
+                        <span class="icon"><i class="fa-solid {{ service.icon }}"></i></span>
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                        <a href="#contact" class="btn btn-primary">Learn More</a>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="why-choose-us">
+            <div class="split-content animate-on-scroll">
+                <div class="media-block animate-slide-left">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80" alt="Premium interior craftsmanship" loading="lazy">
+                </div>
+                <div class="copy-block animate-slide-right">
+                    <h2>Why Clients Choose Us</h2>
+                    <ul class="features-list animate-stagger">
+                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Customized Designs Tailored to Your Needs</li>
+                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Premium Materials & Quality Craftsmanship</li>
+                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Affordable Pricing with No Hidden Costs</li>
+                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Experienced & Creative Designers</li>
+                        <li><span class="check"><i class="fa-solid fa-check"></i></span> On-Time Delivery & Project Management</li>
+                        <li><span class="check"><i class="fa-solid fa-check"></i></span> 3D Design Preview Before Execution</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="portfolio">
+            <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+            <p class="section-subtitle animate-on-scroll">Explore our latest interior design projects showcasing creativity and craftsmanship.</p>
+            <div class="projects-grid animate-stagger">
+                {% for project in projects %}
+                    <article class="project-card">
+                        <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
+                        <div class="project-overlay">
+                            <h3>{{ project.title }}</h3>
+                            <p>{{ project.location }}</p>
+                            <span class="style-tag">{{ project.tag }}</span>
+                            <span class="view-btn">View Project</span>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+            <a href="#contact" class="btn btn-primary animate-on-scroll">View All Projects</a>
+        </section>
+
+        <section class="before-after-section">
+            <h2 class="section-title animate-on-scroll">Before & After</h2>
+            <p class="section-subtitle animate-on-scroll">See the transformation we bring to every space.</p>
+            <div class="before-after-container animate-scale" id="beforeAfterSlider">
+                <div class="before-after-wrapper">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=80" alt="Before renovation" class="before-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=80" alt="After renovation" class="after-image" id="afterImage" loading="lazy">
+                    <div class="slider-handle" id="sliderHandle">
+                        <span class="slider-label before">Before</span>
+                        <span class="slider-label after">After</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="design-process">
+            <h2 class="section-title animate-on-scroll">Our Design Process</h2>
+            <p class="section-subtitle animate-on-scroll">A seamless journey from vision to reality, guided by our expertise.</p>
+            <div class="timeline" id="timeline">
+                <div class="timeline-progress"><div class="timeline-progress-fill" id="timelineFill"></div></div>
+                {% for title, text in [
+                    ("Consultation", "Understand your vision & requirements"),
+                    ("Planning", "Space planning & layout design"),
+                    ("3D Design", "Photorealistic 3D visualization"),
+                    ("Material Selection", "Curated materials & finishes"),
+                    ("Execution", "Professional installation & setup"),
+                    ("Final Handover", "Complete project delivery & walkthrough")
+                ] %}
+                    <article class="timeline-step">
+                        <div class="step-number">{{ loop.index }}</div>
+                        <h4>{{ title }}</h4>
+                        <p>{{ text }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="stats" id="stats">
+            <div class="stats-grid">
+                <div class="stat-card animate-on-scroll"><span class="number" data-target="500">0</span><span class="label">Projects Completed</span></div>
+                <div class="stat-card animate-on-scroll"><span class="number" data-target="350">0</span><span class="label">Happy Clients</span></div>
+                <div class="stat-card animate-on-scroll"><span class="number" data-target="10">0</span><span class="label">Years Experience</span></div>
+                <div class="stat-card animate-on-scroll"><span class="number" data-target="25">0</span><span class="label">Awards Won</span></div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <h2 class="section-title animate-on-scroll">What Our Clients Say</h2>
+            <p class="section-subtitle animate-on-scroll">Hear from our happy clients about their experience with us.</p>
+            <div class="testimonials-slider" id="testimonialSlider">
+                <div class="testimonials-track" id="testimonialTrack">
+                    {% for testimonial in testimonials %}
+                        <article class="testimonial-card{% if loop.first %} active{% endif %}">
+                            <img src="{{ testimonial.image }}" alt="Client {{ testimonial.name }}" class="client-img" loading="lazy">
+                            <h4>{{ testimonial.name }}</h4>
+                            <div class="stars">★★★★★</div>
+                            <p class="feedback">"{{ testimonial.feedback }}"</p>
+                        </article>
+                    {% endfor %}
+                </div>
+                <div class="testimonial-dots" id="testimonialDots">
+                    {% for testimonial in testimonials %}
+                        <button class="testimonial-dot{% if loop.first %} active{% endif %}" data-index="{{ loop.index0 }}" aria-label="Go to testimonial {{ loop.index }}"></button>
+                    {% endfor %}
+                </div>
+                <div class="testimonial-controls">
+                    <button id="prevTestimonial" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button id="nextTestimonial" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section animate-on-scroll">
+            <h2>Ready to Design Your Dream Space?</h2>
+            <p>Let's create something beautiful together. Get in touch with us today.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-gold">Get Free Consultation</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </section>
+
+        <section class="blog">
+            <h2 class="section-title animate-on-scroll">Latest Blog</h2>
+            <p class="section-subtitle animate-on-scroll">Stay updated with the latest interior design trends and tips.</p>
+            <div class="blog-grid animate-stagger">
+                {% for post in blog_posts %}
+                    <article class="blog-card">
+                        <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+                        <div class="blog-content">
+                            <span class="date">{{ post.date }}</span>
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.description }}</p>
+                            <a href="#contact" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="contact-preview" id="contact">
+            <h2 class="section-title animate-on-scroll">Get In Touch</h2>
+            <p class="section-subtitle animate-on-scroll">Have a project in mind? We'd love to hear from you.</p>
+            <div class="contact-wrapper animate-on-scroll">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                        <div><h4>Phone</h4><p>+91 98765 43210</p></div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div><h4>Email</h4><p>info@interiordesign.com</p></div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div><h4>Address</h4><p>123, Design Street, Andheri East,<br>Mumbai - 400093, India</p></div>
+                    </div>
+                    <p class="db-note">{{ "PostgreSQL storage is active." if db_enabled else "Set DATABASE_URL to save messages in PostgreSQL." }}</p>
+                </div>
+                <form class="contact-form" id="contactForm" method="post" action="{{ url_for('contact') }}">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="form-alert {{ category }}">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+                </form>
+            </div>
+            <div class="map-container animate-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114732.5!2d84.3600!3d26.2183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5a2f1a3b1234%3A0x0!2zMjbCsDEzJzA1LjkiTiA4NMKwMjEnMzYuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy" title="Home Designer Office Location"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <footer class="footer animate-on-scroll">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Home Designer</h3>
+                <p>We create elegant, functional, and timeless interiors for homes and commercial spaces.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    {% for service in services[:5] %}
+                        <li><a href="#services">{{ service.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Home Designer. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

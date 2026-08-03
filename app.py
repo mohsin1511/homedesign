@@ -48,31 +48,31 @@ PROJECTS = [
         "title": "Modern Living Room",
         "location": "Mumbai, India",
         "tag": "Contemporary",
-        "image": "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1200&q=80",
+        "image": "images/modern-living-room.jpg",
     },
     {
         "title": "Luxury Bedroom",
         "location": "Delhi, India",
         "tag": "Luxury",
-        "image": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
+        "image": "images/luxury-bedroom.jpg",
     },
     {
         "title": "Office Workspace",
         "location": "Pune, India",
         "tag": "Corporate",
-        "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+        "image": "images/office-workspace.jpg",
     },
     {
         "title": "Elegant Dining Area",
         "location": "Hyderabad, India",
         "tag": "Elegant",
-        "image": "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=80",
+        "image": "images/elegant-dining-area.jpg",
     },
     {
         "title": "Premium Villa Interior",
         "location": "Goa, India",
         "tag": "Premium",
-        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
+        "image": "images/premium-villa-interior.jpg",
     },
 ]
 
@@ -218,7 +218,7 @@ def health():
 
 if __name__ == "__main__":
     app.run(
-        host="0.0.0.0",
+        host="127.0.0.1",
         debug=os.environ.get("FLASK_DEBUG", "0") == "1",
         port=int(os.environ.get("PORT", 5002)),
         use_reloader=False,

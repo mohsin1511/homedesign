@@ -217,7 +217,7 @@ header {
     color: #fffaf2;
     background:
         linear-gradient(90deg, rgba(21, 19, 15, 0.84), rgba(21, 19, 15, 0.54), rgba(21, 19, 15, 0.25)),
-        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85") center/cover;
+        url("../images/hero-bg.jpg") center/cover;
     animation: heroSettle 1.4s var(--ease-smooth) both;
 }
 
@@ -813,7 +813,7 @@ section:not(.hero) {
 .stats {
     background:
         linear-gradient(rgba(21, 19, 15, 0.78), rgba(21, 19, 15, 0.78)),
-        url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
+        url("../images/stats-bg.jpg") center/cover fixed;
 }
 
 .stats-grid {
@@ -921,7 +921,7 @@ section:not(.hero) {
     color: #fffaf2;
     background:
         linear-gradient(135deg, rgba(36, 32, 26, 0.92), rgba(109, 75, 50, 0.88)),
-        url("https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=80") center/cover;
+        url("../images/cta-bg.jpg") center/cover;
 }
 
 .cta-section h2 {

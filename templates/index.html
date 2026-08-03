@@ -68,7 +68,7 @@
         <section class="about-preview" id="about">
             <div class="split-content animate-on-scroll">
                 <div class="media-block animate-slide-left">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Premium living room interior" loading="lazy">
+                    <img src="{{ url_for('static', filename='images/about-preview.jpg') }}" alt="Premium living room interior" loading="lazy">
                 </div>
                 <div class="copy-block animate-slide-right">
                     <h2>Designing Beautiful Spaces Since 2015</h2>
@@ -110,7 +110,7 @@
         <section class="why-choose-us">
             <div class="split-content animate-on-scroll">
                 <div class="media-block animate-slide-left">
-                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80" alt="Premium interior craftsmanship" loading="lazy">
+                    <img src="{{ url_for('static', filename='images/why-choose-us.jpg') }}" alt="Premium interior craftsmanship" loading="lazy">
                 </div>
                 <div class="copy-block animate-slide-right">
                     <h2>Why Clients Choose Us</h2>
@@ -132,7 +132,7 @@
             <div class="projects-grid animate-stagger">
                 {% for project in projects %}
                     <article class="project-card">
-                        <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
+                        <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}" loading="lazy">
                         <div class="project-overlay">
                             <h3>{{ project.title }}</h3>
                             <p>{{ project.location }}</p>
@@ -150,8 +150,8 @@
             <p class="section-subtitle animate-on-scroll">See the transformation we bring to every space.</p>
             <div class="before-after-container animate-scale" id="beforeAfterSlider">
                 <div class="before-after-wrapper">
-                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=80" alt="Before renovation" class="before-image" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=80" alt="After renovation" class="after-image" id="afterImage" loading="lazy">
+                    <img src="{{ url_for('static', filename='images/before-renovation.jpg') }}" alt="Before renovation" class="before-image" loading="lazy">
+                    <img src="{{ url_for('static', filename='images/after-renovation.jpg') }}" alt="After renovation" class="after-image" id="afterImage" loading="lazy">
                     <div class="slider-handle" id="sliderHandle">
                         <span class="slider-label before">Before</span>
                         <span class="slider-label after">After</span>
@@ -198,7 +198,7 @@
                 <div class="testimonials-track" id="testimonialTrack">
                     {% for testimonial in testimonials %}
                         <article class="testimonial-card{% if loop.first %} active{% endif %}">
-                            <img src="{{ testimonial.image }}" alt="Client {{ testimonial.name }}" class="client-img" loading="lazy">
+                            <img src="{{ url_for('static', filename=testimonial.image) }}" alt="Client {{ testimonial.name }}" class="client-img" loading="lazy">
                             <h4>{{ testimonial.name }}</h4>
                             <div class="stars">★★★★★</div>
                             <p class="feedback">"{{ testimonial.feedback }}"</p>
@@ -232,7 +232,7 @@
             <div class="blog-grid animate-stagger">
                 {% for post in blog_posts %}
                     <article class="blog-card">
-                        <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+                        <img src="{{ url_for('static', filename=post.image) }}" alt="{{ post.title }}" loading="lazy">
                         <div class="blog-content">
                             <span class="date">{{ post.date }}</span>
                             <h3>{{ post.title }}</h3>
